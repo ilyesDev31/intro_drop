@@ -1,0 +1,379 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Epilogue", sans-serif;
+  overflow-x: hidden;
+}
+
+ul {
+  list-style: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  display: block;
+}
+
+.btn {
+  border: 2px solid black;
+  padding: 8px 12px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+.container {
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+@media (max-width: 375px) {
+  .container {
+    width: 340px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    width: 740px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+header {
+  align-items: center;
+}
+header .container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  min-height: 52px;
+}
+header .container ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 40px;
+  flex: 2;
+}
+header .container ul .list {
+  display: flex;
+  gap: 50px;
+  color: hsl(0, 0%, 41%);
+  font-weight: 500;
+}
+header .container ul .list li {
+  cursor: pointer;
+  position: relative;
+}
+header .container ul .list li svg.arrow {
+  transform: translate(50%, -30%);
+  -webkit-transform: translate(50%, -30%);
+  -moz-transform: translate(50%, -30%);
+  -ms-transform: translate(50%, -30%);
+  -o-transform: translate(50%, -30%);
+  display: none;
+}
+header .container ul .list li svg.arrow.active {
+  display: inline;
+}
+header .container ul .list li div.principal {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 0 20px 5px #dcdcdc;
+  padding: 20px;
+  border: 8px;
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  transition: opacity 0.3s;
+}
+header .container ul .list li div.principal.active {
+  opacity: 1;
+  pointer-events: all;
+}
+header .container ul .list li div.principal.first {
+  transform: translate(-50%, 20px);
+  -webkit-transform: translate(-50%, 20px);
+  -moz-transform: translate(-50%, 20px);
+  -ms-transform: translate(-50%, 20px);
+  -o-transform: translate(-50%, 20px);
+}
+header .container ul .list li div.principal.second {
+  transform: translate(0%, 20px);
+  -webkit-transform: translate(0%, 20px);
+  -moz-transform: translate(0%, 20px);
+  -ms-transform: translate(0%, 20px);
+  -o-transform: translate(0%, 20px);
+}
+header .container ul .list li div.principal div {
+  width: 100%;
+  display: flex;
+  gap: 15px;
+}
+header .container ul .list li div.principal div svg {
+  width: 18px;
+}
+header .container ul .auth {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.burger {
+  height: 20px;
+  width: 30px;
+  position: relative;
+  display: none;
+}
+.burger div {
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  position: absolute;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+.burger div:nth-child(2) {
+  top: calc(50% - 1px);
+}
+.burger div:nth-child(3) {
+  bottom: 0;
+}
+.burger.active div:nth-child(1) {
+  top: calc(50% - 1px);
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+}
+.burger.active div:nth-child(3) {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  top: calc(50% - 1px);
+}
+.burger.active div:nth-child(2) {
+  top: calc(50% - 1px);
+  opacity: 0;
+}
+
+@media (max-width: 750px) {
+  header {
+    background-color: white;
+  }
+  header ul {
+    background-color: white;
+    flex-direction: column;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    position: absolute;
+    top: 0px;
+    padding: 70px 30px 0;
+    right: 0;
+    min-height: 100vh;
+    flex: 2;
+    width: 70%;
+    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+  }
+  header ul.active {
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+  }
+  header ul .list {
+    flex-direction: column;
+    gap: 30px !important;
+    color: hsl(0, 0%, 41%);
+    font-weight: 500;
+  }
+  header ul .list li.extra-menu {
+    transition: height 0.3s;
+    height: 17px;
+    width: -moz-fit-content;
+    width: fit-content;
+    overflow-y: hidden;
+    -webkit-transition: height 0.3s;
+    -moz-transition: height 0.3s;
+    -ms-transition: height 0.3s;
+    -o-transition: height 0.3s;
+  }
+  header ul .list li.extra-menu.active {
+    height: 190px;
+  }
+  header ul .list li.extra-menu:nth-child(2).active {
+    height: 156px;
+  }
+  header ul .list li.extra-menu div.principal {
+    margin-top: 10px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+    gap: 18px !important;
+    position: relative;
+    box-shadow: none;
+    padding: 20px 0 0 0;
+    transform: translate(0, 0) !important;
+    -webkit-transform: translate(0, 0) !important;
+    -moz-transform: translate(0, 0) !important;
+    -ms-transform: translate(0, 0) !important;
+    -o-transform: translate(0, 0) !important;
+  }
+  header ul .list li.extra-menu div.principal div {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding-left: 20px;
+  }
+  header ul .auth {
+    flex-direction: column;
+    margin-bottom: 20px;
+    gap: 10px;
+    width: 100%;
+    padding-top: 30px;
+  }
+  header ul .auth a:nth-child(2) {
+    width: 100%;
+    text-align: center;
+    padding: 13px 0;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+  }
+  header .container {
+    justify-content: space-between;
+  }
+  header .container .burger {
+    display: block;
+    cursor: pointer;
+  }
+}
+.landing {
+  height: calc(100vh - 52px);
+  display: flex;
+  align-items: center;
+}
+.landing .container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.landing .container .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex: 2;
+}
+.landing .container .text h1 {
+  font-size: 5rem;
+  max-width: 530px;
+  margin-bottom: 2rem;
+}
+.landing .container .text p {
+  max-width: 450px;
+  font-size: 18px;
+  line-height: 1.5;
+  color: hsl(0, 0%, 41%);
+  margin-bottom: 2rem;
+}
+.landing .container .text a {
+  background-color: black;
+  color: white;
+  padding: 10px 25px;
+  margin-bottom: 2rem;
+}
+.landing .container .text .brands {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.landing .container .desktop-img {
+  width: 380px;
+}
+.landing .container .mobile-img {
+  display: none;
+}
+
+@media (max-width: 830px) {
+  .landing {
+    height: -moz-fit-content;
+    height: fit-content;
+    margin-top: 20px;
+  }
+  .landing .container {
+    flex-direction: column-reverse;
+  }
+  .landing .container .mobile-img {
+    display: block;
+    width: 100%;
+  }
+  .landing .container .desktop-img {
+    display: none;
+  }
+  .landing .container .text {
+    text-align: center;
+  }
+  .landing .container .text h1 {
+    width: 100%;
+    font-size: 3rem;
+  }
+  .landing .container .text p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  .landing .container .text a {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+  }
+  .landing .container .text .brands {
+    margin-bottom: 20px;
+  }
+}/*# sourceMappingURL=style.css.map */
